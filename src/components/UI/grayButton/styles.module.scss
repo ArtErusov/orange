@@ -1,0 +1,12 @@
+@import '../../../assets/css/main.css';
+
+.button{
+   padding: 14px 40px; 
+   background-color: var(--gray);
+   transition: 0.5s;
+
+   &:hover{
+    background-color: var(--orange);
+    color: var(--white);
+   }
+}

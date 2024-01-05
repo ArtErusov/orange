@@ -1,0 +1,122 @@
+@import '../../../../../assets/css/main.css';
+
+/* --------------------Select -------------------*/
+
+.select{
+    margin-top: 40px;
+    width: 800px;
+    height: 40px;
+    background-color: var(--gray);
+}
+
+/* --------------------Category------------------*/
+
+.category{
+    margin-top: 40px;
+    width: 100px;
+    height: 40px;
+    background-color: var(--gray);
+}
+
+
+/* --------------------CardItem------------------*/
+.card{
+    width: 237px;
+    height: 480px;
+    // background-color: #ebe1e1;
+    transition: 0.8s;
+    border-radius: 16px;
+
+    &:hover{
+        box-shadow: 0px 0px 12px 0px rgba(217, 217, 217, 0.55);
+    }
+
+
+    &__img{
+        width: 235px;
+        height: 235px;
+        margin: 5px 1px 0;  
+        position: absolute;
+        border-radius: 16px;
+        }
+
+    &__label{
+        position: relative;  
+        top: 210px;
+        left: 180px;
+        height: 24px; 
+        width: 48px;
+        background-color: var(--orange); 
+        border-radius: 8px;
+        color: var(--white);
+        padding: 3px 10px;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+        }
+
+    &__plataorm{
+        margin-top: 220px;
+        display: flex;
+
+        &_item{
+            margin: 0 4px;
+            height: 22px;
+            background-color: var(--gray);
+            color: var(--white);
+            border-radius: 2px;
+            padding: 3px 8px;
+        }
+    }
+
+    &__price{
+            display: flex;
+            margin-top: 20px;
+
+            &_main{
+                font-size: 18px;
+                font-weight: 700;
+            }
+
+            &_sale{
+                margin-left: 10px;
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--gray);
+
+            }
+        }
+
+    &__rating{
+        display: flex;
+        margin-top: 11px;
+        &_star{
+           width: 100px;
+           height: 15px;
+           background-color: var(--orange);
+        }
+        &_review{
+            width: 40px;
+            height: 15px;
+            background-color: var(--orange);
+            margin-left: 10px;
+        }
+    }
+
+    &__title{
+        margin-top: 10px;
+        width: 200px;
+    }
+
+    &__btn{
+        margin: 10px 44px;
+    }
+}
+
+
+/* --------------------Pagination------------------*/
+.pagination{
+    
+    width: 800px;
+    height: 40px;
+    background-color: var(--gray);
+    margin: 40px auto;
+}
