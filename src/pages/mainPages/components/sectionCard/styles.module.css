@@ -1,0 +1,6 @@
+@import '../../../../assets/css/main.css';
+
+.display{
+    display: flex;
+    justify-content: space-between;
+}

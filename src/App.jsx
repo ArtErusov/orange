@@ -1,9 +1,15 @@
+import { Fragment } from 'react';
 import './assets/css/main.css';
+import Header from './components/header/Header';
+import MainPages from './pages/mainPages/MainPages';
 
 function App() {
 
   
-  return<div>Привет мир!!!</div>
+  return<Fragment>
+    <Header/>
+    <MainPages/>
+  </Fragment>
 }
 
 export default App

@@ -1,0 +1,37 @@
+@import '../../../../../assets/css/main.css';
+
+/* --------------------Select -------------------*/
+
+.select{
+    margin-top: 40px;
+    width: 800px;
+    height: 40px;
+    background-color: var(--gray);
+}
+
+/* --------------------Category------------------*/
+
+.category{
+    margin-top: 40px;
+    width: 100px;
+    height: 40px;
+    background-color: var(--gray);
+}
+
+
+/* --------------------CardItem------------------*/
+.item{
+    width: 600px;
+    height: 600px;
+    background-color: var(--gray);
+}
+
+
+/* --------------------Pagination------------------*/
+.pagination{
+    
+    width: 800px;
+    height: 40px;
+    background-color: var(--gray);
+    margin: 40px auto;
+}
