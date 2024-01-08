@@ -2,28 +2,33 @@ import GrayButton from '../../../../../components/UI/grayButton/GrayButton';
 import styles from './styles.module.scss';
 import { Fragment } from 'react';
 
-const CardItem = () =>  {
+const CardItem = (props) =>  {
   return<Fragment>
     <div className={styles.card}>
-      <a href="" ><img className={styles.card__img} src='https://img.mvideo.ru/Pdb/small_pic/480/400076052b.jpg'/></a>
-      <div className={styles.card__label}>44%</div>
+      <a href="" ><img className={styles.card__img} src={props.src}/></a>
+
+      
+      <div className={ props.label? styles.card__label : styles.card__label_none}>{props.label}</div>
+
       <div className={styles.card__plataorm}>
-        <div className={styles.card__plataorm_item}>PS 5</div>
-      </div>
-
-      <div className={styles.card__price}>
-        <div className={styles.card__price_main}>2 950 ₽</div>    
-        <div className={styles.card__price_sale}>4 950 ₽</div>
-      </div>
-
-
-      <div className={styles.card__rating}>
-        <p className={styles.card__rating_star}></p>
-        <div className={styles.card__rating_review}></div>
+        {props.platforms.map((item, index) =>
+        <div key={index} className={styles.card__plataorm_item}>{item}</div>
+        )}
       </div>
       
-      <p className={styles.card__title}>Игра для PlayStation 4/5 Ubisoft Assassin's Creed: Вальгалла</p>
 
+      <div className={styles.card__price}>
+        <div className={styles.card__price_main}>{props.price}</div>    
+        <div className={styles.card__price_sale}>{props.discount}</div>
+      </div>
+
+
+      {/* <div className={styles.card__rating}>
+        <p className={styles.card__rating_star}></p>
+        <div className={styles.card__rating_review}></div>
+      </div> */}
+      
+      <p className={styles.card__title}>{props.text}</p>
       <div className={styles.card__btn}>
         <GrayButton title={"Купить"}/>
       </div>
