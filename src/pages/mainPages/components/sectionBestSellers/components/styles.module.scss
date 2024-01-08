@@ -1,6 +1,6 @@
 @import '../../../../../assets/css/main.css';
 
-/* --------------------Category -------------------*/
+/* --------------------CardCategory -------------------*/
 
 .select{
    display: flex;
@@ -23,13 +23,33 @@
 
 }
 
-/* --------------------Category------------------*/
+/* --------------------CardSorting------------------*/
 
-.category{
+.sort{
+    margin-top: 18px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
 
-    width: 100px;
-    height: 40px;
-    background-color: var(--gray);
+    &__p{
+    margin-right: 10px;    
+        &_active{
+            cursor: pointer;
+            color: var(--orange);
+            text-decoration: underline;
+        }
+    }    
+    &__drop{
+        position: absolute;
+        background-color: #fff;
+        top: 20px;
+        right: 0;
+        border: 2px solid var(--gray);
+        padding: 20px;
+        border-radius: 8px;
+        z-index: 1;
+    }
 }
 
 
