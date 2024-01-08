@@ -2,9 +2,25 @@ import GrayButton from '../../../../../components/UI/grayButton/GrayButton';
 import styles from './styles.module.scss';
 import { Fragment } from 'react';
 
+
 const CardItem = (props) =>  {
+  //Недоработанная логика рассчета процента
+  // const discountCalculation = (item) =>{
+  //   if (item === undefined){
+  //     return
+  //   }else{
+     
+  //     }
+  //     console.log(item.replace('%', ''));
+  //   }
+
+
+
   return<Fragment>
+
+  
     <div className={styles.card}>
+        {/* {discountCalculation(props.label)} */}
       <a href="" ><img className={styles.card__img} src={props.src}/></a>
 
       
@@ -19,7 +35,7 @@ const CardItem = (props) =>  {
 
       <div className={styles.card__price}>
         <div className={styles.card__price_main}>{props.price}</div>    
-        <div className={styles.card__price_sale}>{props.discount}</div>
+        <div className={props.discount ? styles.card__price_sale : ''}>{props.discount}</div>
       </div>
 
 

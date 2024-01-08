@@ -36,10 +36,10 @@
 /* --------------------CardItem------------------*/
 .card{
     width: 237px;
-    height: 480px;
-    // background-color: #ebe1e1;
+    // height: 480px;
     transition: 0.8s;
     border-radius: 16px;
+    padding-bottom: 10px;
 
     &:hover{
         box-shadow: 0px 0px 12px 0px rgba(217, 217, 217, 0.55);
@@ -63,7 +63,7 @@
         color: var(--white);
         padding: 3px 10px;
         box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
-        
+
         &_none{
           height: 21px;  
         }
@@ -97,7 +97,17 @@
                 font-size: 14px;
                 font-weight: 700;
                 color: var(--gray);
-
+                position: relative;
+                &:before {
+                    z-index: 1;
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 8px;
+                    width: 55px;
+                    height: 1px;
+                    background-color: var(--gray);
+                  }
             }
         }
 
@@ -123,7 +133,7 @@
     }
 
     &__btn{
-        margin: 10px 44px;
+        margin: 20px 44px 10px;
     }
 }
 

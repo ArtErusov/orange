@@ -8,31 +8,27 @@ import Pagination from './components/Pagination';
 const SectionBestSellers = (props) =>  {
   return(
   <div className={styles.container + ' ' + styles.margin}>
+    
     <div className={styles.display}>
       <CardCategory/>
       <CardSorting/>
     </div>
 
+    <div className={styles.card__grid}>
+      {props.cardfilling.map((item) =>
+        <CardItem 
+          key={item.id}
+          text={item.text}
+          src={item.src}
+          label={item.label}
+          discount={item.discount}
+          price={item.price}
+          platforms={item.platforms}  />)
+      }
+    </div>  
 
-    {props.cardfilling.map((item) =>
-    <CardItem 
-    key={item.id}
-    text={item.text}
-    src={item.src}
-    label={item.label}
-    discount={item.discount}
-    price={item.price}
-    platforms={item.platforms}
-
+      <Pagination/>
     
-    
-    
-    />)
-    }
-
-
-
-    <Pagination/>
   </div>
   );
 };
