@@ -1,12 +1,12 @@
 import styles from './styles.module.scss';
 import { Fragment } from 'react';
 
-const CardSelect = () =>  {
+const CardSorting = () =>  {
   return<Fragment>
-    <div className={styles.select}>
+    <div className={styles.category}>
 
     </div>
   </Fragment>
 };
 
-export default CardSelect;
+export default CardSorting;

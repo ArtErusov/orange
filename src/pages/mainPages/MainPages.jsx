@@ -1,10 +1,10 @@
 import styles from './styles.module.css';
-import SectionCard from './components/sectionCard/SectionCard';
+import SectionBestSellers from './components/sectionBestSellers/SectionBestSellers';
 import { Fragment } from 'react';
 
 const MainPages = () =>  {
   return( <Fragment>
-  <SectionCard/>
+  <SectionBestSellers/>
   </Fragment>
   );
 };

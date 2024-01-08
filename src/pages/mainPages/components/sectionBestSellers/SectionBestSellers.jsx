@@ -1,16 +1,16 @@
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
-import CardSelect from './components/CardSelect';
+import CardSorting from './components/CardSorting';
 import CardCategory from './components/CardCategory';
 import CardItem from './components/CardItem';
 import Pagination from './components/Pagination';
 
-const SectionCard = () =>  {
+const SectionBestSellers = () =>  {
   return(
-  <div className={styles.container}>
+  <div className={styles.container + ' ' + styles.margin}>
     <div className={styles.display}>
-      <CardSelect/>
       <CardCategory/>
+      <CardSorting/>
     </div>
     <CardItem/>
     <Pagination/>
@@ -18,4 +18,4 @@ const SectionCard = () =>  {
   );
 };
 
-export default SectionCard;
+export default SectionBestSellers;

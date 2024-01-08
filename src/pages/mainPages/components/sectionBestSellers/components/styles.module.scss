@@ -1,18 +1,32 @@
 @import '../../../../../assets/css/main.css';
 
-/* --------------------Select -------------------*/
+/* --------------------Category -------------------*/
 
 .select{
-    margin-top: 40px;
-    width: 800px;
-    height: 40px;
-    background-color: var(--gray);
+   display: flex;
+
+    &__item{
+        font-size: 16px;
+        padding: 15px 30px 16px ;
+        background-color: var(--gray-s-light);
+        border-radius: 12px;
+        margin-right: 10px;
+        font-weight: 600;
+        color: var(--gray);
+        cursor: pointer;
+    }
+
+    &__active{
+        color: var(--white);
+        background-color: var(--orange);
+    }
+
 }
 
 /* --------------------Category------------------*/
 
 .category{
-    margin-top: 40px;
+
     width: 100px;
     height: 40px;
     background-color: var(--gray);
