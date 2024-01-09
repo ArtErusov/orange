@@ -2,12 +2,10 @@ import styles from './styles.module.css';
 import SectionBestSellers from './components/sectionBestSellers/SectionBestSellers';
 import { Fragment } from 'react';
 
-const MainPage = (props) =>  {
+const MainPage = () =>  {
 
   return( <Fragment>
-  <SectionBestSellers 
-    itemCard = {props.itemCard} 
-    isLoadingSceleton={props.isLoadingSceleton}/>
+  <SectionBestSellers />
   </Fragment>
   );
 };
