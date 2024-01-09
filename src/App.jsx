@@ -1,5 +1,8 @@
 import { Fragment, useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
 import './assets/css/main.css';
+
 import Header from './components/header/Header';
 import MainPage from './pages/mainPage/MainPage';
 
@@ -22,7 +25,13 @@ useEffect(()=>{
   
   return<Fragment>
     <Header/>
-    <MainPage itemCard={itemCard} isLoadingSceleton={isLoadingSceleton}/>
+    <Routes>
+      <Route  path='/' element={<MainPage 
+        itemCard={itemCard} 
+        isLoadingSceleton={isLoadingSceleton}/>
+      }/>
+      
+    </Routes>
   </Fragment>
 }
 

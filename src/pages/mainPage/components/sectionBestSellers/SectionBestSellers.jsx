@@ -17,7 +17,7 @@ const SectionBestSellers = (props) =>  {
 
     <div className={styles.card__grid}> 
     {props.isLoadingSceleton 
-    ? [...new Array(10)].map(()=><CardSceleton/>)
+    ? [...new Array(10)].map((_, index)=><CardSceleton key={index}/>)
     : props.itemCard.map((item) =>
         <CardItemUI 
           key={item.id}
