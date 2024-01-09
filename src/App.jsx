@@ -16,13 +16,11 @@ useEffect(()=>{
     setItemCard(json);   
   });
 }, []);
-console.log(itemCard)
-
 //-----------------------------------------------
   
   return<Fragment>
     <Header/>
-    <MainPage/>
+    <MainPage itemCard={itemCard}/>
   </Fragment>
 }
 

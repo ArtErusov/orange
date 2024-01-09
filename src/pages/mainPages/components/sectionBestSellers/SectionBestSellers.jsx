@@ -14,8 +14,8 @@ const SectionBestSellers = (props) =>  {
       <CardSorting/>
     </div>
 
-    <div className={styles.card__grid}>
-      {props.cardfilling.map((item) =>
+    <div className={styles.card__grid}> 
+      {props.itemCard?.map((item) =>
         <CardItem 
           key={item.id}
           text={item.text}
