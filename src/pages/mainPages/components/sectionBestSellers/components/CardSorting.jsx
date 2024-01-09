@@ -1,5 +1,5 @@
 import styles from './styles.module.scss';
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 
 const CardSorting = () =>  {
 
@@ -12,9 +12,7 @@ const handlerClick = (i) => {
   setIsOpen(false)
 };
 
-
-
-  return<Fragment>
+  return(
     <div className={styles.sort}>
       <p className={styles.sort__p}>Сортировка по:</p>
       <p onClick={()=>setIsOpen(!isOpen)} className={styles.sort__p_active}>{sortiСategories[selectSortCategories]}</p>
@@ -30,13 +28,9 @@ const handlerClick = (i) => {
               </li>
             )}
             </ul>
-      )}
-
-      
-     
-     
+      )} 
     </div>
-  </Fragment>
+  );
 };
 
 export default CardSorting;
