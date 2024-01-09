@@ -1,9 +1,9 @@
-import GrayButton from '../../../../../components/UI/grayButton/GrayButton';
+import GrayButton from '../grayButton/GrayButton';
 import styles from './styles.module.scss';
 import { Fragment } from 'react';
 
 
-const CardItem = (props) =>  {
+const CardItemUI = (props) =>  {
   //Недоработанная логика рассчета процента
   // const discountCalculation = (item) =>{
   //   if (item === undefined){
@@ -53,4 +53,4 @@ const CardItem = (props) =>  {
   </Fragment>
 };
 
-export default CardItem;
+export default CardItemUI;

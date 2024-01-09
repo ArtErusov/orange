@@ -2,7 +2,7 @@ import styles from './styles.module.scss';
 
 import CardSorting from './components/CardSorting';
 import CardCategory from './components/CardCategory';
-import CardItem from './components/CardItem';
+import CardItemUI from '../../../../components/UI/cardItemUI/CardItemUI';
 import Pagination from './components/Pagination';
 
 const SectionBestSellers = (props) =>  {
@@ -16,7 +16,7 @@ const SectionBestSellers = (props) =>  {
 
     <div className={styles.card__grid}> 
       {props.itemCard?.map((item) =>
-        <CardItem 
+        <CardItemUI 
           key={item.id}
           text={item.text}
           src={item.src}
