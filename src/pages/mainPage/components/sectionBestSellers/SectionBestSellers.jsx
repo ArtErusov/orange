@@ -12,25 +12,49 @@ import Pagination from './components/Pagination';
 const SectionBestSellers = () =>  {
 
 
+//----------работа с  Category-----------------------
+  const platformsCategory = ['Все платформы', 'PC', 'PS4', 'PS5', 'Xbox', 'Switch']
+  const [selectCategory, setsSelectCategory ] = useState(0)
+
+//----------работа с  Sorting-----------------------
+  const sortСategories = [
+    {name: 'Популярности по возростанию', sort: 'rating'},
+    {name: 'Популярности по убыванию', sort: '-rating'},
+    {name: 'Цене по убыванию', sort: 'price'},
+    {name: 'Цене по возростанию', sort: '-price'}, 
+    {name: 'Рейтингу по убыванию', sort: 'title'},
+    {name: 'Рейтингу по возростанию', sort: '-title'}
+  ];
+  const [selectSortCategories, setSelectSortCategories] = useState(0);
+
+//----------работа с  backend-----------------------
 const [isLoadingSceleton, setIsLoadingSceleton] = useState(true) // прогрузка скелетона
 const [itemCard, setItemCard] = useState([]) // хранение массива из бэка
 
 useEffect(()=>{
-  fetch('https://65523e2c5c69a7790329c0eb.mockapi.io/items')
+  const orderSort = sortСategories[selectSortCategories].sort;
+  const orderSortMinus = orderSort.includes('-') ? `asc` : `desc`;
+  const orderCategory = selectCategory === 0 ? `` : `&platforms=${platformsCategory[selectCategory]}`;
+
+  setIsLoadingSceleton(true);
+  fetch(`https://65523e2c5c69a7790329c0eb.mockapi.io/items?${orderCategory}&sortBy=${orderSort.replace('-', '')}&order=${orderSortMinus}`)
       .then((res) => res.json())
       .then((json) => {
     setItemCard(json); 
-    setIsLoadingSceleton(false);  
+    setIsLoadingSceleton(false); 
+    console.log(`https://65523e2c5c69a7790329c0eb.mockapi.io/items?${orderCategory}&sortBy=${orderSort}&`) 
   });
-}, []);
+}, [selectCategory, selectSortCategories]);
+//---------------------------------------------------
+
 
 
   return(
   <div className={styles.container + ' ' + styles.margin}>
     
     <div className={styles.display}>
-      <CardCategory/>
-      <CardSorting/>
+      <CardCategory platformsCategory={platformsCategory} selectCategory={selectCategory} onClickCategory={(index) => setsSelectCategory(index)}/>
+      <CardSorting sortСategories={sortСategories} selectSortCategories={selectSortCategories} onClickSort={(index) => setSelectSortCategories(index)}/>
     </div>
 
     <div className={styles.card__grid}> 
