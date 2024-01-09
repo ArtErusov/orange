@@ -7,6 +7,13 @@ const CardSorting = () =>  {
   const [selectSortCategories, setSelectSortCategories] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
+const handlerClick = (i) => {
+  setSelectSortCategories(i)
+  setIsOpen(false)
+};
+
+
+
   return<Fragment>
     <div className={styles.sort}>
       <p className={styles.sort__p}>Сортировка по:</p>
@@ -17,8 +24,8 @@ const CardSorting = () =>  {
             {sortiСategories.map((item, index) =>
               <li
               key = {index}
-              onClick={() => setSelectSortCategories(index)}
-              className={sortiСategories === index ? sort__active : ''}>
+              onClick={() => handlerClick(index)}
+              className={selectSortCategories === index ? styles.sort__drop_active : ' '}>
                 {item}
               </li>
             )}

@@ -33,22 +33,40 @@
     position: relative;
 
     &__p{
-    margin-right: 10px;    
+        margin-right: 10px; 
+
         &_active{
             cursor: pointer;
             color: var(--orange);
             text-decoration: underline;
         }
-    }    
+    } 
+
     &__drop{
         position: absolute;
         background-color: #fff;
         top: 20px;
+        padding: 10px 0;
         right: 0;
         border: 2px solid var(--gray);
-        padding: 20px;
         border-radius: 8px;
         z-index: 1;
+
+        li{
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+
+            &:hover{
+               background-color: var(--gray-s-light); 
+            }  
+        } 
+
+        &_active{
+            background-color: var(--orange);
+            font-weight: 600;
+            color: var(--white);
+        }    
     }
 }
 
