@@ -5,7 +5,9 @@ import { Fragment } from 'react';
 const MainPage = (props) =>  {
 
   return( <Fragment>
-  <SectionBestSellers itemCard = {props.itemCard}/>
+  <SectionBestSellers 
+    itemCard = {props.itemCard} 
+    isLoadingSceleton={props.isLoadingSceleton}/>
   </Fragment>
   );
 };

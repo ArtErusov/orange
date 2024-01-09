@@ -3,6 +3,7 @@ import styles from './styles.module.scss';
 import CardSorting from './components/CardSorting';
 import CardCategory from './components/CardCategory';
 import CardItemUI from '../../../../components/UI/cardItemUI/CardItemUI';
+import CardSceleton from '../../../../components/UI/cardSceleton/CardSceleton';
 import Pagination from './components/Pagination';
 
 const SectionBestSellers = (props) =>  {
@@ -15,7 +16,9 @@ const SectionBestSellers = (props) =>  {
     </div>
 
     <div className={styles.card__grid}> 
-      {props.itemCard?.map((item) =>
+    {props.isLoadingSceleton 
+    ? [...new Array(10)].map(()=><CardSceleton/>)
+    : props.itemCard.map((item) =>
         <CardItemUI 
           key={item.id}
           text={item.text}
@@ -24,7 +27,8 @@ const SectionBestSellers = (props) =>  {
           discount={item.discount}
           price={item.price}
           platforms={item.platforms}  />)
-      }
+    }
+  
     </div>  
 
       <Pagination/>
