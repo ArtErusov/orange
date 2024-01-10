@@ -9,7 +9,7 @@ import Pagination from './components/Pagination';
 
 
 
-const SectionBestSellers = () =>  {
+const SectionBestSellers = (props) =>  {
 
 
 //----------работа с  Category-----------------------
@@ -45,9 +45,28 @@ useEffect(()=>{
     console.log(`https://65523e2c5c69a7790329c0eb.mockapi.io/items?${orderCategory}&sortBy=${orderSort}&`) 
   });
 }, [selectCategory, selectSortCategories]);
+
+//---------CardItemUI render------------------------------------------
+const sceleton = [...new Array(10)].map((_, index)=><CardSceleton key={index}/>);
+
+const itemRender = itemCard
+.filter((item) => {
+    if (item.text.toLowerCase().includes(props.searchValue.toLowerCase())) {
+      return true;
+    }
+    return false;
+  })
+.map((item) => 
+    <CardItemUI 
+      key={item.id}
+      text={item.text}
+      src={item.src}
+      label={item.label}
+      discount={item.discount}
+      price={item.price}
+      platforms={item.platforms}   
+  />)
 //---------------------------------------------------
-
-
 
   return(
   <div className={styles.container + ' ' + styles.margin}>
@@ -58,19 +77,7 @@ useEffect(()=>{
     </div>
 
     <div className={styles.card__grid}> 
-      {isLoadingSceleton 
-        ? [...new Array(10)].map((_, index)=><CardSceleton key={index}/>)
-        : itemCard.map((item) =>
-            <CardItemUI 
-              key={item.id}
-              text={item.text}
-              src={item.src}
-              label={item.label}
-              discount={item.discount}
-              price={item.price}
-              platforms={item.platforms}  
-            />)
-      }
+      {isLoadingSceleton ? sceleton : itemRender}
     </div>  
       <Pagination/>   
   </div>

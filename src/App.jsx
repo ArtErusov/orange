@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import './assets/css/main.css';
@@ -7,28 +7,13 @@ import Header from './components/header/Header';
 import MainPage from './pages/mainPage/MainPage';
 
 function App() {
+const [searchValue, SetSearchValue] = useState('');
 
-
-// //----------- data for MainPage------------------
-// const [isLoadingSceleton, setIsLoadingSceleton] = useState(true) // прогрузка скелетона
-// const [itemCard, setItemCard] = useState([]) // хранение массива из бэка
-
-// useEffect(()=>{
-//   fetch('https://65523e2c5c69a7790329c0eb.mockapi.io/items')
-//       .then((res) => res.json())
-//       .then((json) => {
-//     setItemCard(json); 
-//     setIsLoadingSceleton(false);  
-//   });
-// }, []);
-// //-----------------------------------------------
-  
   return<Fragment>
-    <Header/>
+    <Header searchValue={searchValue} SetSearchValue={SetSearchValue}/>
     <Routes>
-      <Route  path='/' element={<MainPage/>
-      }/>
-      
+      <Route path='/' element={<MainPage searchValue={searchValue}/> }/>
+
     </Routes>
   </Fragment>
 }

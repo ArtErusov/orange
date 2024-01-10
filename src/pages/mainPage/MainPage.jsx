@@ -2,10 +2,10 @@ import styles from './styles.module.css';
 import SectionBestSellers from './components/sectionBestSellers/SectionBestSellers';
 import { Fragment } from 'react';
 
-const MainPage = () =>  {
+const MainPage = (props) =>  {
 
   return( <Fragment>
-  <SectionBestSellers />
+  <SectionBestSellers searchValue={props.searchValue} />
   </Fragment>
   );
 };
