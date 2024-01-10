@@ -1,7 +1,11 @@
 import styles from './styles.module.scss';
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
+import { SearchContest } from '../../App'
 
-const Header = ({searchValue, SetSearchValue}) =>  {
+const Header = () =>  {
+
+  const {searchValue, SetSearchValue} = useContext(SearchContest);
+
   return<Fragment>
     <div className={styles.first + ' ' + styles.container}>
         <p>Logotype</p>
