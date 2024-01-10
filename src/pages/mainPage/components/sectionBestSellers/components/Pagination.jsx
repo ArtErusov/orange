@@ -1,13 +1,20 @@
 import styles from './styles.module.scss';
-import { Fragment } from 'react';
+import ReactPaginate from 'react-paginate';
 
 const Pagination = () =>  {
-  return<Fragment>
-    <div className={styles.pagination}>
-
-    </div>
-  </Fragment>
-};
+  return(
+     <ReactPaginate
+        className={styles.pagination}
+        breakLabel="..."
+        nextLabel=">"
+        onPageChange={(event) => console.log(event)}
+        pageRangeDisplayed={5}
+        pageCount={3}
+        previousLabel="<"
+        renderOnZeroPageCount={null}
+      />
+      );
+  };
 
 export default Pagination;
 

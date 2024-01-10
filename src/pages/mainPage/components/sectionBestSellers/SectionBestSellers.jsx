@@ -10,8 +10,8 @@ import Pagination from './components/Pagination';
 
 
 const SectionBestSellers = (props) =>  {
-
-
+//----------работа с  pagination-----------------------
+  const [currentPage, setCurrentPage ] = useState(1)
 //----------работа с  Category-----------------------
   const platformsCategory = ['Все платформы', 'PC', 'PS4', 'PS5', 'Xbox', 'Switch']
   const [selectCategory, setsSelectCategory ] = useState(0)
@@ -37,18 +37,18 @@ useEffect(()=>{
   const orderCategory = selectCategory === 0 ? `` : `&platforms=${platformsCategory[selectCategory]}`;
 
   setIsLoadingSceleton(true);
-  fetch(`https://65523e2c5c69a7790329c0eb.mockapi.io/items?${orderCategory}&sortBy=${orderSort.replace('-', '')}&order=${orderSortMinus}`)
+  fetch(`https://65523e2c5c69a7790329c0eb.mockapi.io/items?page=${currentPage}&limit=5&${orderCategory}&sortBy=${orderSort.replace('-', '')}&order=${orderSortMinus}`)
       .then((res) => res.json())
       .then((json) => {
     setItemCard(json); 
     setIsLoadingSceleton(false); 
     console.log(`https://65523e2c5c69a7790329c0eb.mockapi.io/items?${orderCategory}&sortBy=${orderSort}&`) 
   });
-}, [selectCategory, selectSortCategories]);
+}, [selectCategory, selectSortCategories, currentPage]);
 
 //---------CardItemUI render------------------------------------------
 const sceleton = [...new Array(10)].map((_, index)=><CardSceleton key={index}/>);
-
+// поиск работает только с статикой- убрать его
 const itemRender = itemCard
 .filter((item) => {
     if (item.text.toLowerCase().includes(props.searchValue.toLowerCase())) {
@@ -78,7 +78,8 @@ const itemRender = itemCard
 
     <div className={styles.card__grid}> 
       {isLoadingSceleton ? sceleton : itemRender}
-    </div>  
+    </div> 
+
       <Pagination/>   
   </div>
   );

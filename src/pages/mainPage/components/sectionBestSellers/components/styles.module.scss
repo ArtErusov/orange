@@ -73,9 +73,32 @@
 
 /* --------------------Pagination------------------*/
 .pagination{
-    
-    width: 800px;
-    height: 40px;
-    background-color: var(--gray);
-    margin: 40px auto;
+
+   li{
+    display: inline-block;
+   
+   } 
+   a{
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    width: 60px;
+    height: 45px;
+    line-height: 20px;
+    padding: 10px;
+    border: 2px solid var(--gray);
+    border-radius: 20px;
+    margin-right: 15px;
+    cursor: pointer;
+   }
+//    класс к которому мы обращаемся принадлежит библиотеке поэтому мы обращаемся к нему через глобал
+   :global {
+    .selected{
+        a{
+            background-color: var(--orange);
+            color: var(--white);
+        }
+    }
+   }
+
 }
