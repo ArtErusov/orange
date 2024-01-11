@@ -6,23 +6,23 @@ import './assets/css/main.css';
 import Header from './components/header/Header';
 import MainPage from './pages/mainPage/MainPage';
 
-export const SearchContest = createContext();
+export const SearchContext = createContext();
 
 function App() {
 
 const [searchValue, SetSearchValue] = useState('');
 
   return<Fragment>
-    <SearchContest.Provider value={{searchValue, SetSearchValue}}>
+    <SearchContext.Provider value={{searchValue, SetSearchValue}}>
       <Header/>
     
 
-    <Routes>
-      <Route path='/' element={<MainPage searchValue={searchValue}/> }/>
+      <Routes>
+        <Route path='/' element={<MainPage searchValue={searchValue}/> }/>
 
-    </Routes>
-    </SearchContest.Provider>
+      </Routes>
+    </SearchContext.Provider>
   </Fragment>
 }
 
-export default App
+export default App;

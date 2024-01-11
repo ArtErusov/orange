@@ -1,10 +1,10 @@
 import styles from './styles.module.scss';
 import { Fragment, useContext } from 'react';
-import { SearchContest } from '../../App'
+import { SearchContext } from '../../App'
 
 const Header = () =>  {
 
-  const {searchValue, SetSearchValue} = useContext(SearchContest);
+  const {searchValue, SetSearchValue} = useContext(SearchContext);
 
   return<Fragment>
     <div className={styles.first + ' ' + styles.container}>
