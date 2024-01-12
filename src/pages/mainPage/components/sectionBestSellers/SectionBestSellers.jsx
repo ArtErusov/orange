@@ -7,7 +7,7 @@ import CardItemUI from '../../../../components/UI/cardItemUI/CardItemUI';
 import CardSceleton from '../../../../components/UI/cardSceleton/CardSceleton';
 import Pagination from './components/Pagination';
 
-
+// тест работы гита
 
 const SectionBestSellers = (props) =>  {
 //----------работа с  pagination-----------------------
